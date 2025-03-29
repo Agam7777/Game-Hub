@@ -1,0 +1,277 @@
+/* src/pages/LudoPage.css */
+
+.ludo-board {
+    width: 600px;
+    height: 600px;
+    position: relative;
+    border: 4px solid #333;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    gap: 1px;
+  }
+  
+  .ludo-cell {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+  }
+  
+  /* Home Base Corners */
+  .home-area {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+    border: 2px solid #333;
+  }
+  
+  .home-red {
+    background-color: white;
+    border: 8px solid red;
+    top: 0;
+    left: 0;
+  }
+  
+  .home-green {
+    background-color: white;
+    border: 8px solid green;
+    top: 0;
+    right: 0;
+  }
+  
+  .home-yellow {
+    background-color: white;
+    border: 8px solid yellow;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .home-blue {
+    background-color: white;
+    border: 8px solid blue;
+    bottom: 0;
+    left: 0;
+  }
+  
+  /* Home Circles for Pieces */
+  .home-circle {
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+  }
+  
+  .home-circle-red {
+    background-color: red;
+  }
+  
+  .home-circle-green {
+    background-color: green;
+  }
+  
+  .home-circle-blue {
+    background-color: blue;
+  }
+  
+  .home-circle-yellow {
+    background-color: yellow;
+  }
+  
+  /* Path Cells */
+  .path-cell {
+    background-color: white;
+  }
+  
+  .path-red {
+    background-color: rgba(255, 0, 0, 0.2);
+  }
+  
+  .path-green {
+    background-color: rgba(0, 128, 0, 0.2);
+  }
+  
+  .path-blue {
+    background-color: rgba(0, 0, 255, 0.2);
+  }
+  
+  .path-yellow {
+    background-color: rgba(255, 255, 0, 0.2);
+  }
+  
+  /* Safe Cells */
+  .safe-cell::before {
+    content: '★';
+    position: absolute;
+    font-size: 16px;
+    color: #333;
+    z-index: 1;
+  }
+  
+  /* Final Paths */
+  .final-path-red {
+    background-color: rgba(255, 0, 0, 0.5);
+  }
+  
+  .final-path-green {
+    background-color: rgba(0, 128, 0, 0.5);
+  }
+  
+  .final-path-blue {
+    background-color: rgba(0, 0, 255, 0.5);
+  }
+  
+  .final-path-yellow {
+    background-color: rgba(255, 255, 0, 0.5);
+  }
+  
+  /* Center Area */
+  .center-area {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    top: 40%;
+    left: 40%;
+    background-color: white;
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .center-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+  
+  .center-triangle-red {
+    border-width: 60px 60px 0 0;
+    border-color: red transparent transparent transparent;
+    top: 0;
+    left: 0;
+  }
+  
+  .center-triangle-green {
+    border-width: 0 60px 60px 0;
+    border-color: transparent green transparent transparent;
+    top: 0;
+    right: 0;
+  }
+  
+  .center-triangle-yellow {
+    border-width: 0 0 60px 60px;
+    border-color: transparent transparent yellow transparent;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .center-triangle-blue {
+    border-width: 60px 0 0 60px;
+    border-color: transparent transparent transparent blue;
+    bottom: 0;
+    left: 0;
+  }
+  
+  /* Pieces */
+  .piece {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .piece-red {
+    background-color: red;
+  }
+  
+  .piece-green {
+    background-color: green;
+  }
+  
+  .piece-blue {
+    background-color: blue;
+  }
+  
+  .piece-yellow {
+    background-color: yellow;
+  }
+  
+  .piece-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Start Cells */
+  .start-cell {
+    position: relative;
+  }
+  
+  .start-cell::after {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid #333;
+  }
+  
+  /* Game Controls */
+  .player-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+    border-radius: 8px;
+    padding: 16px;
+  }
+  
+  .player-controls-red {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 2px solid red;
+  }
+  
+  .player-controls-green {
+    background-color: rgba(0, 128, 0, 0.1);
+    border: 2px solid green;
+  }
+  
+  .player-controls-blue {
+    background-color: rgba(0, 0, 255, 0.1);
+    border: 2px solid blue;
+  }
+  
+  .player-controls-yellow {
+    background-color: rgba(255, 255, 0, 0.1);
+    border: 2px solid yellow;
+  }
+  
+  .dice {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 8px;
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 16px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
